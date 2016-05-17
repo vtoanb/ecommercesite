@@ -112,11 +112,40 @@ WSGI_APPLICATION = 'toan.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ATOMIC_REQUESTS': True,
+#     }
+# }
+
+# This is needed for the hosted version of the sandbox
+ADMINS = (
+    ('David Winterbottom', 'david.winterbottom@gmail.com'),
+)
+EMAIL_SUBJECT_PREFIX = '[Oscar sandbox] '
+#this setting need for checkout
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MANAGERS = ADMINS
+
+# Use a Sqlite database by default
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ATOMIC_REQUESTS': True,
+        'NAME': location('db.sqlite'),
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+        'ATOMIC_REQUESTS': True
+    }
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     }
 }
 
@@ -124,7 +153,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'vi'
 
 TIME_ZONE = 'UTC'
 
