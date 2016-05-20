@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'compressor',
     'widget_tweaks',
-] + get_core_apps()
+]  + get_core_apps(['myapps.catalogue','myapps.order'])
 
 SITE_ID = 1
 
@@ -85,8 +85,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            OSCAR_MAIN_TEMPLATE_DIR
+            location('templates/')
+            # os.path.join(BASE_DIR, 'templates'),
+            # OSCAR_MAIN_TEMPLATE_DIR
             ],
         'APP_DIRS': True,
         'OPTIONS': {
