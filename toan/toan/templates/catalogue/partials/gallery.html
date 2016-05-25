@@ -7,14 +7,14 @@
 
     {% if all_images|length > 1 %}
 
-        <div id="product_gallery" class="carousel slide">
+        <div id="product_gallery" class="carousel slide" style="background-color:white">
 
-            <div class="thumbnail">
+            <div class="REMOVEthumbnail">
                 <div class="carousel-inner" role="listbox">
                 {% for image in all_images %}
                     <div class="item {% if forloop.first %}active{% endif %}">
-                        {% thumbnail image.original "440x400" upscale=False as thumb %}
-                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" />
+                        {% thumbnail image.original "580x380" crop="center" as thumb %}
+                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="img-rounded"/>
                         {% endthumbnail %}
                     </div>
                 {% endfor %}
@@ -33,7 +33,7 @@
                 </a>
             </div>
 
-            <ol class="carousel-indicators thumbnail">
+            <ol class="carousel-indicators REMOVEthumbnail">
                 {% for image in all_images %}
                     <li data-target="#product_gallery" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}">
                         {% thumbnail image.original "65x55" crop="center" as thumb %}
@@ -48,12 +48,12 @@
 
         {# Only one image to show #}
         <div id="product_gallery" class="carousel">
-            <div class="thumbnail">
+            <div class="REMOVEthumbnail">
                 <div class="carousel-inner">
                     <div class="item active">
                     {% with image=product.primary_image %}
-                        {% thumbnail image.original "440x400" upscale=False as thumb %}
-                            <img src="{{ thumb.url }}" alt="{{ product.get_title }}" />
+                        {% thumbnail image.original "580x380" crop="center" as thumb %}
+                            <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="img-rounded"/>
                         {% endthumbnail %}
                     {% endwith %}
                     </div>

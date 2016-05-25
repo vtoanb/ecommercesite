@@ -45,8 +45,8 @@
             <button type="submit" class="btn btn-danger btn-xs" data-loading-text="{% trans 'Submitting...' %}">{% trans "No" %}</button>
         </form>
     {% endif %}
-             
-    <p>   
+
+    <p>
         <small>
         {% if review.has_votes %}
             {% blocktrans with num_up_votes=review.num_up_votes count num_votes=review.total_votes %}
