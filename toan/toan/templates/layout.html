@@ -15,26 +15,278 @@
     {% endif %}
     <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
+    <style type="text/css">
+        .new_header {
+            /*background-image:url('{{ MEDIA_URL }}media/cache/mientay.jpg');*/
+            background-image:url('/media/cache/toanphotowide.jpg');
+            background-repeat:no-repeat;
+            background-size:100%;
+            -moz-background-size: 100%; /* Gecko 1.9.2 (Firefox 3.6) */
+            -o-background-size: 100%; /* Opera 9.5 */
+            -webkit-background-size: 100%; /* Safari 3.0 */
+            -khtml-background-size: 100%; /* Konqueror 3.5.4 */
+            -moz-border-image: url(mtn.jpg) 0; /* Gecko 1.9.1 (Firefox 3.5) */
+            height: 300px;
+            width: auto;
+
+        }
+
+        @media (max-width: 767px) {
+            .new_header {
+                background-image:url('/media/cache/toanphotofourth.jpg');
+                background-repeat:no-repeat;
+                background-size:100%;
+                -moz-background-size: 100%; /* Gecko 1.9.2 (Firefox 3.6) */
+                -o-background-size: 100%; /* Opera 9.5 */
+                -webkit-background-size: 100%; /* Safari 3.0 */
+                -khtml-background-size: 100%; /* Konqueror 3.5.4 */
+                -moz-border-image: url(mtn.jpg) 0; /* Gecko 1.9.1 (Firefox 3.5) */
+                height: 300px;
+                width: auto; 
+            }
+        }
+
+        /* Over write height for product_pod */
+        .product_pod {
+            height: auto;
+        }
+        /* When device size small then make image higher */
+        @media (min-width: 767px){
+          img.REMOVE-thumbnail {
+            width: 120px;
+            height: 120px;
+          }
+        }
+
+        #top_page {
+            background-color: rgba(255,255,255,0.2);
+            color:black;
+        }
+
+        /*Set border color for shopping-cart*/
+        .btn-cart .navbar-toggle {
+          border-color: white;
+        }
+
+        /*Fork Navbar-default*/
+        .REPLACEnavbar-default {
+          background-color: #f8f8f8;
+          /*border-color: #e7e7e7;*/
+        }
+        .REPLACEnavbar-default .navbar-brand {
+          color: #777;
+        }
+        .REPLACEnavbar-default .navbar-brand:hover,
+        .REPLACEnavbar-default .navbar-brand:focus {
+          color: #5e5e5e;
+          background-color: transparent;
+        }
+        .REPLACEnavbar-default .navbar-text {
+          color: #777;
+        }
+        .REPLACEnavbar-default .navbar-nav > li > a {
+          color: #777;
+        }
+        .REPLACEnavbar-default .navbar-nav > li > a:hover,
+        .REPLACEnavbar-default .navbar-nav > li > a:focus {
+          color: #333;
+          background-color: transparent;
+        }
+        .REPLACEnavbar-default .navbar-nav > .active > a,
+        .REPLACEnavbar-default .navbar-nav > .active > a:hover,
+        .REPLACEnavbar-default .navbar-nav > .active > a:focus {
+          color: #555;
+          background-color: #e7e7e7;
+        }
+        .REPLACEnavbar-default .navbar-nav > .disabled > a,
+        .REPLACEnavbar-default .navbar-nav > .disabled > a:hover,
+        .REPLACEnavbar-default .navbar-nav > .disabled > a:focus {
+          color: #ccc;
+          background-color: transparent;
+        }
+        .REPLACEnavbar-default .navbar-toggle {
+          /*border-color: #ddd;*/
+        }
+        .REPLACEnavbar-default .navbar-toggle:hover,
+        .REPLACEnavbar-default .navbar-toggle:focus {
+          background-color: #ddd;
+        }
+        .REPLACEnavbar-default .navbar-toggle .icon-bar {
+          background-color: #888;
+        }
+        .REPLACEnavbar-default .navbar-collapse,
+        .REPLACEnavbar-default .navbar-form {
+          border-color: #e7e7e7;
+        }
+        .REPLACEnavbar-default .navbar-nav > .open > a,
+        .REPLACEnavbar-default .navbar-nav > .open > a:hover,
+        .REPLACEnavbar-default .navbar-nav > .open > a:focus {
+          background-color: #e7e7e7;
+          color: #555;
+        }
+        @media (max-width: 767px) {
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > li > a {
+            color: #777;
+          }
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #333;
+            background-color: transparent;
+          }
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > .active > a,
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+            color: #555;
+            background-color: #e7e7e7;
+          }
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+          .REPLACEnavbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+            color: #ccc;
+            background-color: transparent;
+          }
+        }
+        .REPLACEnavbar-default .navbar-link {
+          color: #777;
+        }
+        .REPLACEnavbar-default .navbar-link:hover {
+          color: #333;
+        }
+        .REPLACEnavbar-default .btn-link {
+          color: #777;
+        }
+        .REPLACEnavbar-default .btn-link:hover,
+        .REPLACEnavbar-default .btn-link:focus {
+          color: #333;
+        }
+        .REPLACEnavbar-default .btn-link[disabled]:hover,
+        fieldset[disabled] .REPLACEnavbar-default .btn-link:hover,
+        .REPLACEnavbar-default .btn-link[disabled]:focus,
+        fieldset[disabled] .REPLACEnavbar-default .btn-link:focus {
+          color: #ccc;
+        }
+
+        /*Fork Navbar-default*/
+        .PRIMnavbar-default {
+          background-color: #f8f8f8;
+          border-color: #e7e7e7;
+        }
+        .PRIMnavbar-default .navbar-brand {
+          color: #777;
+        }
+        .PRIMnavbar-default .navbar-brand:hover,
+        .PRIMnavbar-default .navbar-brand:focus {
+          color: #5e5e5e;
+          background-color: transparent;
+        }
+        .PRIMnavbar-default .navbar-text {
+          color: #777;
+        }
+        .PRIMnavbar-default .navbar-nav > li > a {
+          color: #777;
+        }
+        .PRIMnavbar-default .navbar-nav > li > a:hover,
+        .PRIMnavbar-default .navbar-nav > li > a:focus {
+          color: #333;
+          background-color: transparent;
+        }
+        .PRIMnavbar-default .navbar-nav > .active > a,
+        .PRIMnavbar-default .navbar-nav > .active > a:hover,
+        .PRIMnavbar-default .navbar-nav > .active > a:focus {
+          color: #555;
+          /*background-color: #e7e7e7;*/
+        }
+        .PRIMnavbar-default .navbar-nav > .disabled > a,
+        .PRIMnavbar-default .navbar-nav > .disabled > a:hover,
+        .PRIMnavbar-default .navbar-nav > .disabled > a:focus {
+          color: #ccc;
+          background-color: transparent;
+        }
+        .PRIMnavbar-default .navbar-toggle {
+          /*border-color: #ddd;*/
+        }
+        .PRIMnavbar-default .navbar-toggle:hover,
+        .PRIMnavbar-default .navbar-toggle:focus {
+          background-color: #ddd;
+        }
+        .PRIMnavbar-default .navbar-toggle .icon-bar {
+          background-color: #888;
+        }
+        .PRIMnavbar-default .navbar-collapse,
+        .PRIMnavbar-default .navbar-form {
+          border-color: #e7e7e7;
+        }
+        .PRIMnavbar-default .navbar-nav > .open > a,
+        .PRIMnavbar-default .navbar-nav > .open > a:hover,
+        .PRIMnavbar-default .navbar-nav > .open > a:focus {
+          /*background-color: #e7e7e7;*/
+          color: #555;
+        }
+        @media (max-width: 767px) {
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > li > a {
+            color: #777;
+          }
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #333;
+            background-color: transparent;
+          }
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > .active > a,
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+            color: #555;
+            background-color: #e7e7e7;
+          }
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+          .PRIMnavbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+            color: #ccc;
+            background-color: transparent;
+          }
+        }
+        .PRIMnavbar-default .navbar-link {
+          color: #777;
+        }
+        .PRIMnavbar-default .navbar-link:hover {
+          color: #333;
+        }
+        .PRIMnavbar-default .btn-link {
+          color: #777;
+        }
+        .PRIMnavbar-default .btn-link:hover,
+        .PRIMnavbar-default .btn-link:focus {
+          color: #333;
+        }
+        .PRIMnavbar-default .btn-link[disabled]:hover,
+        fieldset[disabled] .PRIMnavbar-default .btn-link:hover,
+        .PRIMnavbar-default .btn-link[disabled]:focus,
+        fieldset[disabled] .PRIMnavbar-default .btn-link:focus {
+          color: #ccc;
+        }
+
+
+    </style>
 {% endblock %}
 
 {% block layout %}
-    {# Top-horizontal bar with account, notifictions, dashboard links #}
-    {% include "partials/nav_accounts.html" %}
-
+   
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
-    <header class="header REMOVEcontainer-fluid">
-        <div class="page_inner">
+    <header class="REMOVEheader REMOVEcontainer-fluid new_header">
+      {% include "partials/nav_accounts.html" %}
+        <!-- <div class="page_inner">
             <div class="row">
                 {% include "partials/brand.html" %}
                 {# Mini-basket wrapped in a block so some templates can now display it #}
                 {% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}
             </div>
-        </div>
+        </div> -->
+        
+    </header>
+    <div class="header" id="nav_primary_id">
         {% block navigation %}
             {% include "partials/nav_primary.html" %}
         {% endblock %}
-    </header>
-
+    </div>
     {# Main content of page - other layout templates may override this block #}
     {% block content_wrapper %}
         <div class="REMOVEcontainer-fluid page">

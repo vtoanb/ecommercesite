@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'', include(application.urls)),
+
 ]
 
 # ... your normal urlpatterns here
@@ -22,3 +23,4 @@ if settings.DEBUG:
     # Server statics and uploaded media
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+# (r'(?:.*?/)?(?P<path>(css|jquery|jscripts|images)/.+)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT }),

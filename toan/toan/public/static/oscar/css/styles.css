@@ -8571,7 +8571,7 @@ a .icon-flip-vertical:before {
   }
 }
 body {
-  background-color: #eeeeee;
+  background-color: #11eeee;
 }
 .container-fluid {
   max-width: 1280px;
@@ -8850,7 +8850,7 @@ ul.row {
   margin-left: 0;
 }
 .product_pod {
-  height: 370px;
+  /*height: 370px;*/
   overflow: hidden;
   text-align: center;
   margin: 20px 0;
@@ -9706,3 +9706,7 @@ input[type="number"][id*="quantity"] {
     display: none !important;
   }
 }
+
+/*.new_header {
+  background-color: red;
+}*/

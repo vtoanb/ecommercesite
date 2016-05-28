@@ -188,3 +188,15 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+# USE_LESS = True
+
+# COMPRESS_PRECOMPILERS = (
+#     ('text/less', 'lessc {infile} {outfile}'),
+# )
+
+# COMPRESS_OFFLINE_CONTEXT = {
+#     # this is the only default value from compressor itself
+#     'STATIC_URL': STATIC_URL,
+#     'use_less': USE_LESS,
+# }

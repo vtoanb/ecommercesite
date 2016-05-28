@@ -9,7 +9,7 @@
         {% block product_image %}
             <div class="REMOVE-image_container">
                 {% with image=product.primary_image %}
-                    {% thumbnail image.original "x180" crop="center" as thumb %}
+                    {% thumbnail image.original "300x300" crop="center" as thumb %}
                     <a href="{{ product.get_absolute_url }}"><img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="REMOVE-thumbnail"></a>
                     {% endthumbnail %}
                 {% endwith %}
