@@ -31,13 +31,13 @@
         <li class="active">{{ product.title }}</li>
 
         {% get_back_button as backbutton %}
-        {% if backbutton %}
+        <!-- {% if backbutton %}
             <li class="pull-right">
                 <a href="{{ backbutton.url }}">
                     <i class="icon-arrow-left"></i> {{ backbutton.title }}
                 </a>
             </li>
-        {% endif %}
+        {% endif %} -->
     {% endwith %}
 </ul>
 {% endblock %}

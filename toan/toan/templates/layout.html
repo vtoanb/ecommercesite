@@ -16,6 +16,20 @@
     <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
     <style type="text/css">
+        /*body {
+          font-family: "Open sans bold", sans-serif;
+          font-weight: 700;
+          /*font-size: 14px;*/
+          /*line-height: 1.42857143;*/
+          /*color: #333333;*/
+          /*background-color: #fff;*/
+        /*}*/
+
+        /*textarea {
+          font-family: "Open sans bold, sans-serif";
+          /*font-size: inherit;*/
+          /*line-height: inherit;*/
+        /*} */
         .new_header {
             /*background-image:url('{{ MEDIA_URL }}media/cache/mientay.jpg');*/
             background-image:url('/media/cache/toanphotowide.jpg');
@@ -57,13 +71,39 @@
             height: 120px;
           }
         }
+        /* Hide when small screen */
+        @media (max-width: 767px) {
+          .smallhide {
+            display: none;
+          }
+        }
 
         #top_page {
             background-color: rgba(255,255,255,0.2);
             color:black;
         }
 
-        /*Set border color for shopping-cart*/
+         /* Branding style */
+         div.branding {
+            position: absolute;
+            top: 180px;
+            margin-left : 32px;
+            padding-left : 12px;
+            padding-right: 12px;
+            background: rgba(94,92,110,0.8);
+            /*width : auto;*/
+            text-align: left;
+         }
+
+         div.branding h1, h3 {
+          color : white;
+          font-weight: 100;
+          margin-top: 0px;
+          margin-bottom: 0px;
+         }
+
+     
+        /* Set border color for shopping-cart*/
         .btn-cart .navbar-toggle {
           border-color: white;
         }
@@ -280,6 +320,11 @@
                 {% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}
             </div>
         </div> -->
+        <div class="branding">
+          <h1>Khô Nam Bộ</h1>
+          <h3>Chuyên: Tôm khô, Cá Khô Miền Tây</h3>
+          <h3>Liên hệ: 097 555 1068</h3>  
+        </div>
         
     </header>
     <div class="header" id="nav_primary_id">
