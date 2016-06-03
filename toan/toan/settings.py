@@ -150,6 +150,31 @@ CACHES = {
     }
 }
 
+# Order processing
+# ================
+
+# Sample order/line status settings. This is quite simplistic. It's like you'll
+# want to override the set_status method on the order object to do more
+# sophisticated things.
+OSCAR_INITIAL_ORDER_STATUS = 'Pending'
+OSCAR_INITIAL_LINE_STATUS = 'Pending'
+
+# This dict defines the new order statuses than an order can move to
+OSCAR_ORDER_STATUS_PIPELINE = {
+    'Pending': ('Being processed', 'Cancelled',),
+    'Being processed': ('Complete', 'Cancelled',),
+    'Cancelled': (),
+    'Complete': (),
+}
+
+# This dict defines the line statuses that will be set when an order's status
+# is changed
+OSCAR_ORDER_STATUS_CASCADE = {
+    'Being processed': 'Being processed',
+    'Cancelled': 'Cancelled',
+    'Complete': 'Shipped',
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -179,8 +204,8 @@ MEDIA_URL = '/media/'
 # Examples: "http://foo.com/media/", "/media/".
 #ADMIN_MEDIA_PREFIX = '/media/admin/'
 
-STATIC_URL = '/static/'
 STATIC_ROOT = location('public/static')
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     location('static/'),
 )
@@ -189,7 +214,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-# USE_LESS = True
+# USE_LESS = False
 
 # COMPRESS_PRECOMPILERS = (
 #     ('text/less', 'lessc {infile} {outfile}'),

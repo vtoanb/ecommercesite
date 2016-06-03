@@ -3,12 +3,12 @@
 
 {% block content %}
 <section class="REMOVEwell REMOVEwell-blank">
-    <div class="sub-header">
+    <div {% if promotion.name != ' '%} class="sub-header" {% else %} {% endif %}>
         <h3>{{ promotion.name }}</h3>
     </div>
-
+    <div class="description_text">
     {{ promotion.description|safe }}
-
+    </div>
     <ul class="row">
         {% for product in products %}
         <li class="col-xs-12 col-sm-4 col-md-3 col-lg-3">{% render_product product %}</li>

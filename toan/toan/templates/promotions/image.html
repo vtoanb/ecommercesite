@@ -2,7 +2,7 @@
     {% if promotion.link_url %}
         <a href="{{ promotion.link_url }}"><img src="{{ promotion.image.url }}" title="{{ promotion.name }}" /></a>
     {% else %}
-        <img src="{{ promotion.image.url }}" title="{{ promotion.name }}" />
+        <img src="{{ promotion.image.url }}" title="{{ promotion.name }}" style="width:100%;height:auto;max-height:400px;max-width: 600px;margin-top:-22px;margin-bottom:12px"/>
     {% endif %}
 {% endif %}
 
