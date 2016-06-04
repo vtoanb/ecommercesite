@@ -214,6 +214,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+# Address settings
+OSCAR_REQUIRED_ADDRESS_FIELDS = ('first_name', 'last_name', 'line1',
+                                 'line4','phone')
+
 # USE_LESS = False
 
 # COMPRESS_PRECOMPILERS = (

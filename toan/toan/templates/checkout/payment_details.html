@@ -9,7 +9,8 @@
     {% include 'checkout/nav.html' with step=3 %}
 {% endblock %}
 
-{% block checkout_title %}{% trans "Enter payment details" %}{% endblock %}
+{% block checkout_title %}Thanh toán{% endblock %}
+
 
 {% block order_contents %}{% endblock %}
 {% block shipping_address %}{% endblock %}
@@ -18,7 +19,15 @@
 
 {% block payment_details %}
     {% block payment_details_content %}
-        
+        <p><a href="/">Khonambo</a> sẽ giao hàng ngay khi nhận được thanh toán từ quý khách.</p>
+        <table class="table table-condensed" style="border:solid 1px #ddd">
+        <tr><td>Ngân hàng</td><td>Vietcombank</td></tr>
+        <tr><td>Chi nhánh</td><td>Tân bình</td>
+        <tr><td>Số tài khoản</td><td>0335 1234 1235 0000</td></tr>
+        <tr><td>Tên tài khoản</td><td>Nguyễn Tiến Thư</td></tr>
+        <tr><td>Ghi chú</td><td>Tên khách hàng & Mã đơn hàng</td></tr>
+        </table>
         <a id="view_preview" href="{% url 'checkout:preview' %}" class="btn btn-primary btn-lg">{% trans "Continue" %}</a>
+
     {% endblock payment_details_content %}
 {% endblock payment_details %}
