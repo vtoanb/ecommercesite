@@ -16,34 +16,22 @@
     <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
     <style type="text/css">
-        /*body {
-          font-family: "Open sans bold", sans-serif;
-          font-weight: 700;
-          /*font-size: 14px;*/
-          /*line-height: 1.42857143;*/
-          /*color: #333333;*/
-          /*background-color: #fff;*/
-        /*}*/
-
-        /*textarea {
-          font-family: "Open sans bold, sans-serif";
-          /*font-size: inherit;*/
-          /*line-height: inherit;*/
-        /*} */
 
         body {
-          /*background-image:url('/media/cache/toanphotowide.jpg');*/
-          /*background-repeat:no-repeat;*/
-          /*background-size:100%;  */
-          max-width: 1000px;
+          max-width: 1280px;
           margin: 0 auto;
         }
 
         th.borderless, td.borderless {
             border: none;
         }
+
+        .promotion-title h2 {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 40px;
+        }
         .new_header {
-            /*background-image:url('{{ MEDIA_URL }}media/cache/mientay.jpg');*/
             background-image:url('/media/cache/toanphotowide.jpg');
             background-size: cover;
             -moz-background-size: cover; /* Gecko 1.9.2 (Firefox 3.6) */ 
@@ -51,13 +39,24 @@
             -webkit-background-size: cover; /* Safari 3.0 */
             -khtml-background-size: cover; /* Konqueror 3.5.4 */
             -moz-border-image: url(mtn.jpg) 0; /* Gecko 1.9.1 (Firefox 3.5) */
-            height: 300px;
+            height: 400px;
             width: auto;
         }
 
         img.REMOVE-thumbnail {
           width: 100%;
           height: auto;
+        }
+
+        .attract-text h2{
+          text-align: center;
+          color: #eee;
+          font-size: 3vw;
+        }
+        @media (max-width: 767px) {
+          .attract-text h2{
+            font-size: 6vmin;
+          }
         }
 
 
@@ -70,7 +69,7 @@
                 -webkit-background-size: cover; /* Safari 3.0 */
                 -khtml-background-size: cover; /* Konqueror 3.5.4 */
                 -moz-border-image: url(mtn.jpg) 0; /* Gecko 1.9.1 (Firefox 3.5) */
-                height: 300px;
+                height: 350px;
                 width: auto; 
             }
         }
@@ -78,14 +77,25 @@
         /* Make description text style */
         div.description_text {
           text-align: justify;
-          /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-          /*font-size: 14px;*/
         }
 
         /* Over write height for product_pod */
         .product_pod {
             height: auto;
         }
+
+        .REMOVEside_categories a{
+          font-size: 15px;
+        }
+        .REMOVEside_categories a:hover{
+          /*border-bottom: solid 3px red;*/
+          text-decoration: none;
+        }
+        .REMOVEside_categories li{
+          margin-bottom: 4px;
+          margin-left: 12px;
+        }
+
 
         /* Hide when small screen */
         @media (max-width: 767px) {
@@ -94,22 +104,13 @@
           }
         }
 
-        #top_page {
-            background-color: rgba(255,255,255,0.2);
-            color:black;
-        }
-
          /* Branding style */
          div.branding {
-            position: absolute;
-            top: 180px;
-            margin-left: 32px;
-            
-            padding-left : 12px;
-            padding-right: 12px;
-            /*background: rgba(94,92,110,0.8);*/
+            margin: 0 auto;
+            padding: 30px;
+            width: 500px;
+            text-align: center;
             background: rgba(0,0,0,0.4);
-            /*width : auto;*/
             text-align: left;
          }
 
@@ -126,11 +127,6 @@
           border-color: white;
         }
 
-        /*Fork Navbar-default*/
-        .REPLACEnavbar-default {
-          background-color: #f8f8f8;
-          /*border-color: #e7e7e7;*/
-        }
         .REPLACEnavbar-default .navbar-brand {
           color: #777;
         }
@@ -224,15 +220,8 @@
           color: #ccc;
         }
 
-/*Fork Navbar-default*/
-        /*.PRIMnavbar-default {*/
-          /*margin-top: -50px;*/
-        /*}*/
-        
 
         .PRIMnavbar-default {
-          /*background: rgba(0,0,0,0.2);*/
-          /*background-color: #f8f8f8;*/
           border-color: #e7e7e7;
         }
         .PRIMnavbar-default .navbar-brand {
@@ -258,16 +247,12 @@
         .PRIMnavbar-default .navbar-nav > .active > a:hover,
         .PRIMnavbar-default .navbar-nav > .active > a:focus {
           color: #555;
-          /*background-color: #e7e7e7;*/
         }
         .PRIMnavbar-default .navbar-nav > .disabled > a,
         .PRIMnavbar-default .navbar-nav > .disabled > a:hover,
         .PRIMnavbar-default .navbar-nav > .disabled > a:focus {
           color: #ccc;
           background-color: transparent;
-        }
-        .PRIMnavbar-default .navbar-toggle {
-          /*border-color: #ddd;*/
         }
         .PRIMnavbar-default .navbar-toggle:hover,
         .PRIMnavbar-default .navbar-toggle:focus {
@@ -278,12 +263,11 @@
         }
         .PRIMnavbar-default .navbar-collapse,
         .PRIMnavbar-default .navbar-form {
-          border-color: #e7e7e7;
+          /*border-color: #e7e7e7;*/
         }
         .PRIMnavbar-default .navbar-nav > .open > a,
         .PRIMnavbar-default .navbar-nav > .open > a:hover,
         .PRIMnavbar-default .navbar-nav > .open > a:focus {
-          /*background-color: #e7e7e7;*/
           color: #555;
         }
         @media (max-width: 767px) {
@@ -335,27 +319,23 @@
 {% block layout %}
    
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
-    <header class="REMOVEheader REMOVEcontainer-fluid new_header">
+    <header class="header new_header">
       {% include "partials/nav_accounts.html" %}
-        <!-- <div class="page_inner">
-            <div class="row">
-                {% include "partials/brand.html" %}
-                {# Mini-basket wrapped in a block so some templates can now display it #}
-                {% block mini_basket %}{% include "partials/mini_basket.html" %}{% endblock %}
+      <div style="width:80%;margin:60px auto 0px auto" class="attract-text">
+        <h2>Tôm khô, cá khô và hải sản chính gốc nam bộ</h2>
+      </div>
+      <div style="width:300px;margin:0 auto" class="hidden-xs">
+        <form method="get" action="{% url 'search:search' %}" class="" style="margin:0 auto">
+            <div class="form-group">
+                {{ search_form.q }}
             </div>
-        </div> -->
-        <div class="branding">
-          <h1>Khô Nam Bộ</h1>
-          <h3>Chuyên: Tôm khô, Cá Khô Miền Tây</h3>
-          <h3>Liên hệ: 097 555 1068</h3>  
-        </div>
-        
+          </form>
+      </div>
+
     </header>
-    <div class="header" id="nav_primary_id">
-        {% block navigation %}
-            {% include "partials/nav_primary.html" %}
-        {% endblock %}
-    </div>
+    {% block navigation %}
+        {% include "partials/nav_primary.html" %}
+    {% endblock %}
     {# Main content of page - other layout templates may override this block #}
     {% block content_wrapper %}
         <div class="REMOVEcontainer-fluid page">

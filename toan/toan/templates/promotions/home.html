@@ -12,18 +12,21 @@
 {% block header %}{% endblock %}
 
 {% block column_left %}
+
     {% category_tree as tree_categories %}
     {% if tree_categories %}
-        <!-- <h4>{% trans "Show results for" %}</h4> -->
-        <div class="side_categories">
-            <ul class="nav nav-list">
+        <div class="REMOVEside_categories hidden-xs">
+
+            <ul class="nav">
+                <li><a href="/basket">Xem giỏ hàng<span class="glyphicon glyphicon-shopping-cart" style="margin-left:12px"></span> </a></li>
+                <li><a href="/checkout">Thanh toán<span class="glyphicon glyphicon-ok-sign" style="margin-left:12px"></span></a></li>
                 {% for tree_category, info in tree_categories %}
                     <li>
                         <a href="{{ tree_category.get_absolute_url }}">
                             {% if tree_category.pk == category.pk %}
-                                <strong>{{ tree_category.name }}</strong>
+                                <strong>{{ tree_category.name}}</strong>
                             {% else %}
-                                {{ tree_category.name }}
+                                {{ tree_category.name}}
                             {% endif %}
                         </a>
 
@@ -32,6 +35,7 @@
                             </ul></li>
                         {% endfor %}
                 {% endfor %}
+                <li><a href="/catalogue">Xem tất cả</a></li>
             </ul>
         </div>
     {% endif %}

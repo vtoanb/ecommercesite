@@ -179,7 +179,7 @@ OSCAR_ORDER_STATUS_CASCADE = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'vi'
 
 TIME_ZONE = 'UTC'
 
@@ -218,6 +218,14 @@ STATICFILES_FINDERS = (
 OSCAR_REQUIRED_ADDRESS_FIELDS = ('first_name', 'last_name', 'line1',
                                  'line4','phone')
 
+# Here's a sample Haystack config if using Solr (which is recommended)
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+#         'URL': 'http://127.0.0.1:8983/solr',
+#         'INCLUDE_SPELLING': True,
+#     },
+# }
 # USE_LESS = False
 
 # COMPRESS_PRECOMPILERS = (

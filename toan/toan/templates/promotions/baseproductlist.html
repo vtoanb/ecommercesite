@@ -2,16 +2,16 @@
 {% load product_tags %}
 
 {% block content %}
-<section class="REMOVEwell REMOVEwell-blank">
+<section class="REMOVEwell REMOVEwell-blank promotion-title">
     <div {% if promotion.name != ' '%} class="sub-header" {% else %} {% endif %}>
-        <h3>{{ promotion.name }}</h3>
+        <h2>{{ promotion.name }}</h2>
     </div>
     <div class="description_text">
     {{ promotion.description|safe }}
     </div>
     <ul class="row">
         {% for product in products %}
-        <li class="col-xs-12 col-sm-4 col-md-3 col-lg-3">{% render_product product %}</li>
+        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">{% render_product product %}</li>
         {% endfor %}
     </ul>
 

@@ -6,20 +6,18 @@
     {% trans "Basket" %} | {{ block.super }}
 {% endblock %}
 
-{% block breadcrumbs %}
-    <ul class="breadcrumb">
-        <li>
-            <a href="{{ homepage_url }}">{% trans "Home" %}</a>
-        </li>
-        <li class="active">{% trans "Basket" %}</li>
-    </ul>
-{% endblock %}
 
 {# Hide mini-basket so we don't have two baskets to keep in sync #}
 {% block mini_basket %}{% endblock %}
 
-{% block headertext %}
-    {% trans "Basket" %}
+{% block header %}
+    <div class="action">
+        <h1>
+            {% block headertext %}
+                {% trans "Basket" %}
+            {% endblock %}
+        </h1>
+    </div>
 {% endblock %}
 
 {% block content %}
