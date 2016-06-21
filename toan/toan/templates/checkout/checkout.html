@@ -24,7 +24,7 @@
     <div class="row shipping-payment">
         {% block shipping_address %}
             <div class="col-sm-6">
-                <div class="REMOVEsub-header">
+                <div>
                     <h2>{% trans "Shipping" %}</h2>
                 </div>
                 {% if shipping_address %}
@@ -79,7 +79,7 @@
 
         {# You will almost certainly want to override this block to provide a payment summary #}
         {% block payment_method %}
-            <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
                 <div class="REMOVEsub-header">
                     <h2>{% trans "Payment" %}</h2>
                 </div>
@@ -90,7 +90,7 @@
                     <h3>{% trans "Payment" %}</h3>
                     <p>{% trans "Payment details to go here" %}</p>
                 </div>
-            </div>
+            </div> -->
         {% endblock payment_method %}
     </div>
 

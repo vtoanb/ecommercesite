@@ -9,7 +9,7 @@
     {% include 'checkout/nav.html' with step=3 %}
 {% endblock %}
 
-{% block checkout_title %}Thanh toán{% endblock %}
+{% block checkout_title %}Hình thức thanh toán{% endblock %}
 
 
 {% block order_contents %}{% endblock %}
@@ -19,14 +19,12 @@
 
 {% block payment_details %}
     {% block payment_details_content %}
-        <p><a href="/">Khonambo</a> sẽ giao hàng ngay khi nhận được thanh toán từ quý khách.</p>
-        <table class="table table-condensed" style="border:solid 1px #ddd">
-        <tr><td>Ngân hàng</td><td>Vietcombank</td></tr>
-        <tr><td>Chi nhánh</td><td>Tân bình</td>
-        <tr><td>Số tài khoản</td><td>0335 1234 1235 0000</td></tr>
-        <tr><td>Tên tài khoản</td><td>Nguyễn Tiến Thư</td></tr>
-        <tr><td>Ghi chú</td><td>Tên khách hàng & Mã đơn hàng</td></tr>
-        </table>
+        <p>Chúng tôi nhận thanh toán bằng những hình thức dưới đây:
+        <ol class="list-unstyled">
+           <li><span class="glyphicon glyphicon-ok"></span> Chuyển khoản qua ngân hàng</li>
+           <li><span class="glyphicon glyphicon-ok"></span> Thanh toán tiền mặt khi nhận hàng (COD)</li>
+           <li><span class="glyphicon glyphicon-ok"></span> Mua hàng trực tiếp tại cửa hàng của chúng tôi</li> 
+        </ol>
         <a id="view_preview" href="{% url 'checkout:preview' %}" class="btn btn-primary btn-lg">{% trans "Continue" %}</a>
 
     {% endblock payment_details_content %}
