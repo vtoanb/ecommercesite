@@ -53,10 +53,20 @@
           color: #eee;
           font-size: 3vw;
         }
+
+        .search-box {
+          margin: 0 auto;
+          width: 300px;
+        }
         @media (max-width: 767px) {
           .attract-text h2{
-            font-size: 6vmin;
+            font-size: 7vw;
           }
+          .search-box {
+            /*margin: 0 auto;*/
+            width: 70%;
+          }
+
         }
 
 
@@ -321,20 +331,21 @@
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
     <header class="header new_header">
       {% include "partials/nav_accounts.html" %}
-      <div style="width:80%;margin:60px auto 0px auto" class="attract-text">
-        <h2>Tôm khô, cá khô và hải sản chính gốc nam bộ</h2>
-      </div>
-      <div style="width:300px;margin:0 auto" class="hidden-xs">
-        <form method="get" action="{% url 'search:search' %}" class="" style="margin:0 auto">
+      <div class="responsive-hiddden">
+        <div style="width:90%;margin:60px auto 0px auto" class="attract-text">
+          <h2>Tôm khô, cá khô và hải sản chính gốc nam bộ</h2>
+        </div>
+        <div class="search-box">
+          <form method="get" action="{% url 'search:search' %}" class="" style="margin:0 auto">
             <div class="form-group">
                 {{ search_form.q }}
             </div>
           </form>
+        </div>
       </div>
 
     </header>
     {% block navigation %}
-        {% include "partials/nav_primary.html" %}
     {% endblock %}
     {# Main content of page - other layout templates may override this block #}
     {% block content_wrapper %}
@@ -388,6 +399,13 @@
 
     <script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js" %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#responsive-btn").click(function(){
+          $(".responsive-hiddden").toggle();
+        });
+      });
+    </script>
 {% endblock %}
 
 {% block extrascripts %}
