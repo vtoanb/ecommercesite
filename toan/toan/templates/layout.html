@@ -20,6 +20,7 @@
         body {
           max-width: 1280px;
           margin: 0 auto;
+          background-color: #eee;
         }
 
         th.borderless, td.borderless {
@@ -34,7 +35,7 @@
         .new_header {
             background-image:url('/media/cache/toanphotowide.jpg');
             background-size: cover;
-            -moz-background-size: cover; /* Gecko 1.9.2 (Firefox 3.6) */ 
+            -moz-background-size: cover; /* Gecko 1.9.2 (Firefox 3.6) */
             -o-background-size: cover; /* Opera 9.5 */
             -webkit-background-size: cover; /* Safari 3.0 */
             -khtml-background-size: cover; /* Konqueror 3.5.4 */
@@ -80,7 +81,7 @@
                 -khtml-background-size: cover; /* Konqueror 3.5.4 */
                 -moz-border-image: url(mtn.jpg) 0; /* Gecko 1.9.1 (Firefox 3.5) */
                 height: 350px;
-                width: auto; 
+                width: auto;
             }
         }
 
@@ -131,7 +132,7 @@
           margin-bottom: 0px;
          }
 
-     
+
         /* Set border color for shopping-cart*/
         .btn-cart .navbar-toggle {
           border-color: white;
@@ -327,7 +328,7 @@
 {% endblock %}
 
 {% block layout %}
-   
+
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
     <header class="header new_header">
       {% include "partials/nav_accounts.html" %}

@@ -9042,8 +9042,10 @@ a:hover .thumbnail {
   margin-bottom: 20px;
 }
 #add_review_form #id_title,
-#add_review_form #id_body {
-  width: 500px;
+#add_review_form #id_body,
+#add_review_form #id_name,
+#add_review_form #id_email{
+  max-width: 500px;
 }
 .review {
   margin-bottom: 20px;
