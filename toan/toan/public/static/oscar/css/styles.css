@@ -9355,8 +9355,8 @@ input[type="number"][id*="quantity"] {
   margin: 0 auto;
 }
 #product_gallery .carousel-inner > .item {
-  height: 400px;
-  line-height: 400px;
+  height: auto;
+  /*line-height: 400px;*/
   vertical-align: middle;
   text-align: center;
 }
