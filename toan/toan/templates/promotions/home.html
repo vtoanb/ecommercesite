@@ -17,8 +17,8 @@
         <div class="REMOVEside_categories hidden-xs">
 
             <ul class="nav">
-                <li><a href="/basket">Xem giỏ hàng<span class="glyphicon glyphicon-shopping-cart" style="margin-left:12px"></span> </a></li>
-                <li><a href="/checkout">Thanh toán<span class="glyphicon glyphicon-ok-sign" style="margin-left:12px"></span></a></li>
+                <li><a href="/basket">Giỏ hàng<span style="margin-left:12px"></span> </a></li>
+                <li><a href="/catalogue">Tất cả sản phẩm</a></li>
                 {% for tree_category, info in tree_categories %}
                     <li>
                         <a href="{{ tree_category.get_absolute_url }}">
@@ -34,7 +34,7 @@
                             </ul></li>
                         {% endfor %}
                 {% endfor %}
-                <li><a href="/catalogue">Xem tất cả</a></li>
+                <!--<li><a href="/hang-moi">Mới về</a></li>-->
             </ul>
         </div>
     {% endif %}

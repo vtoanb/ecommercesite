@@ -15,6 +15,7 @@
     {% endif %}
     <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
     <style type="text/css">
 
         body {
@@ -23,8 +24,19 @@
           background-color: #eee;
         }
 
+        .navbar-brand {
+            font-size: 28px;
+            font-family:'Lobster';
+        }
+        #top_page .account-collapse a{
+            font-size: 16px;
+        }
         th.borderless, td.borderless {
             border: none;
+        }
+
+        .change-bckgnd {
+            background-color: rgba(255,255,255,0.6);
         }
 
         .promotion-title h2 {
@@ -332,18 +344,11 @@
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
     <header class="header new_header">
       {% include "partials/nav_accounts.html" %}
-      <div class="responsive-hiddden">
-        <div style="width:90%;margin:60px auto 0px auto" class="attract-text">
-          <h2>Tôm khô, cá khô và hải sản chính gốc nam bộ</h2>
-        </div>
-        <div class="search-box">
-          <form method="get" action="{% url 'search:search' %}" class="" style="margin:0 auto">
-            <div class="form-group">
-                {{ search_form.q }}
-            </div>
-          </form>
-        </div>
-      </div>
+      <!--<div class="responsive-hiddden">-->
+      <!--  <div style="width:90%;margin:60px auto 0px auto" class="attract-text">-->
+      <!--    <h2>Tôm khô, cá khô và hải sản chính gốc nam bộ</h2>-->
+      <!--  </div>-->
+      <!--</div>-->
 
     </header>
     {% block navigation %}
@@ -400,11 +405,29 @@
 
     <script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js" %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.smooch.io/smooch.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $("#responsive-btn").click(function(){
-          $(".responsive-hiddden").toggle();
+        var num = 50; //number of pixels before modifying styles
+
+        Smooch.init({
+            appToken: '6oc2pwe5qfiys21ai2s01ddzq',
+            customText: {
+                headerText: 'Chát với khô nam bộ!',
+                inputPlaceholder: 'nhập tin nhắn...',
+                sendButtonText: 'Gửi',
+            }
         });
+        $(window).bind('scroll', function () {
+            if ($(window).scrollTop() > num) {
+                $("#top_page").addClass("change-bckgnd");
+            }
+            else{
+                $("#top_page").removeClass("change-bckgnd");
+            }
+        });
+
+
       });
     </script>
 {% endblock %}
