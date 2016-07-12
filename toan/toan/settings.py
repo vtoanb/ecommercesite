@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from oscar.defaults import *
 
-
 # Path helper
 location = lambda x: os.path.join(
     os.path.dirname(os.path.realpath(__file__)), x)
@@ -79,7 +78,7 @@ HAYSTACK_CONNECTIONS = {
 
 ROOT_URLCONF = 'toan.urls'
 
-from oscar import OSCAR_MAIN_TEMPLATE_DIR
+# from oscar import OSCAR_MAIN_TEMPLATE_DIR
 
 TEMPLATES = [
     {
@@ -115,8 +114,11 @@ WSGI_APPLICATION = 'toan.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'vtoanb$test',
+#         'USER': 'vtoanb',
+#         'PASSWORD': 'kh0namb0',
+#         'HOST': 'vtoanb.mysql.pythonanywhere-services.com',
 #         'ATOMIC_REQUESTS': True,
 #     }
 # }
