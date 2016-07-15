@@ -31,7 +31,7 @@ SECRET_KEY = '82+hnn#^w52s1m3$^2&o(htukyu-dtzta^n%-@&ldzey8vy!gw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['vtoanb.pythonanywhere.com']
+ALLOWED_HOSTS = ['vtoanb.pythonanywhere.com','139.59.244.203']
 
 
 # Application definition
@@ -111,17 +111,18 @@ WSGI_APPLICATION = 'toan.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'vtoanb$test',
-#         'USER': 'vtoanb',
-#         'PASSWORD': 'kh0namb0',
-#         'HOST': 'vtoanb.mysql.pythonanywhere-services.com',
-#         'ATOMIC_REQUESTS': True,
-#     }
-# }
+"""
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'knb',
+         'USER': 'vtoanb',
+         'PASSWORD': 'toanvu621',
+         'HOST': 'localhost',
+         'PORT': '',
+         'ATOMIC_REQUESTS': True,
+     }
+}"""
 
 # This is needed for the hosted version of the sandbox
 ADMINS = (
