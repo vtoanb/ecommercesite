@@ -71,7 +71,7 @@
     <div class="row">
         <div class="sub-header" style="margin-left:15px;border-bottom:none"><h1> {{product.get_title}} </h1></div>
         {% block product_gallery %}
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             {% include "catalogue/partials/gallery.html" %}
         </div>
         {% endblock %}
@@ -119,7 +119,7 @@
         {% block product_review %}
         <section>
             <div id="reviews" class="sub-header">
-                {% if product.num_approved_reviews > 3 %}
+                {% if product.num_approved_reviews > 0 %}
                     <a href="{% url 'catalogue:reviews-list' product_slug=product.slug product_pk=product.id %}" class="btn pull-right">{% trans "See all reviews" %}</a>
                 {% endif %}
                 <h2>{% trans "Customer Reviews" %}</h2>

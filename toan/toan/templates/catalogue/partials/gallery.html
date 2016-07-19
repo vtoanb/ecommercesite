@@ -48,11 +48,11 @@
 
         {# Only one image to show #}
         <div id="product_gallery" class="carousel">
-            <div class="thumbnail">
+            <div class="thumbnail" style="border:none">
                 <div class="carousel-inner">
                     <div class="item active">
                     {% with image=product.primary_image %}
-                        {% thumbnail image.original "329x400" crop="center" as thumb %}
+                        {% thumbnail image.original "329x329" crop="center" as thumb %}
                             <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="REMOVEimg-rounded"/>
                         {% endthumbnail %}
                     {% endwith %}

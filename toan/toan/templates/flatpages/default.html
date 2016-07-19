@@ -1,6 +1,6 @@
-{% extends "layout.html" %}
+{% extends "layout_2_col.html" %}
 {% load i18n %}
-
+{% load category_tags %}
 {% block title %}
     {{ flatpage.title}} | {{ block.super }}
 {% endblock %}
@@ -22,6 +22,47 @@
         <li class="active">{{ flatpage.title }}</li>
     </ul>
 {% endblock %}
+
+{% block column_left %}
+
+    {% category_tree as tree_categories %}
+    {% if tree_categories %}
+        <div class="REMOVEside_categories hidden-xs">
+
+            <ul class="nav">
+                <li><a href="/basket">Giỏ hàng<span style="margin-left:12px"></span> </a></li>
+                <li><a href="/catalogue">Tất cả sản phẩm</a></li>
+                {% for tree_category, info in tree_categories %}
+                    <li>
+                        <a href="{{ tree_category.get_absolute_url }}">
+                            {% if tree_category.pk == category.pk %}
+                                <strong>{{ tree_category.name}}</strong>
+                            {% else %}
+                                {{ tree_category.name}}
+                            {% endif %}
+                        </a>
+
+                        {% if info.has_children %}<ul>{% else %}</li>{% endif %}
+                        {% for n in info.num_to_close %}
+                            </ul></li>
+                        {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if has_facets %}
+        <h4>{% trans "Refine by" %}</h4>
+        <div class="side_categories">
+            {% for field, data in facet_data.items %}
+                {% if data.results %}
+                    {% include 'search/partials/facet.html' with name=data.name items=data.results %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+
 
 {% block content %}
     <article>{{ flatpage.content }}</article>

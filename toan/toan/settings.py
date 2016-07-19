@@ -31,7 +31,7 @@ SECRET_KEY = '82+hnn#^w52s1m3$^2&o(htukyu-dtzta^n%-@&ldzey8vy!gw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['vtoanb.pythonanywhere.com','139.59.244.203']
+ALLOWED_HOSTS = ['www.khonambo.com','khonambo.com','139.59.244.203']
 
 
 # Application definition
