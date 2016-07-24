@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'compressor',
     'widget_tweaks',
+    'django.contrib.sitemaps',
 ]  + get_core_apps(['myapps.catalogue','myapps.order'])
 
 SITE_ID = 1
@@ -177,7 +178,8 @@ OSCAR_ORDER_STATUS_CASCADE = {
     'Cancelled': 'Cancelled',
     'Complete': 'Shipped',
 }
-
+# Setting default oscar currency to VND for convenience
+OSCAR_DEFAULT_CURRENCY = 'VND'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -192,6 +194,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+gettext_noop = lambda s: s
+LANGUAGES = (
+    ('vi',gettext_noop('Vietnamese')),
+)
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
