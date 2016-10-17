@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from oscar.defaults import *
+from config import *
 
 # Path helper
 location = lambda x: os.path.join(
@@ -26,7 +27,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '82+hnn#^w52s1m3$^2&o(htukyu-dtzta^n%-@&ldzey8vy!gw'
+#SECRET_KEY = '82+hnn#^w52s1m3$^2&o(htukyu-dtzta^n%-@&ldzey8vy!gw'
+SECRET_KEY = '501joifjoaj23$dfqf#@@31Bfwoo3IOIO99%%#$!^$#!$!$!h3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'compressor',
     'widget_tweaks',
     'django.contrib.sitemaps',
+    'social.apps.django_app.default',
 ]  + get_core_apps(['myapps.catalogue','myapps.order'])
 
 SITE_ID = 1
@@ -69,6 +72,7 @@ MIDDLEWARE_CLASSES = (
 AUTHENTICATION_BACKENDS = (
     'oscar.apps.customer.auth_backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
+    'social.backends.facebook.FacebookOAuth2',
 )
 # simple backend search engine
 HAYSTACK_CONNECTIONS = {
@@ -102,6 +106,9 @@ TEMPLATES = [
                 'oscar.apps.checkout.context_processors.checkout',
                 'oscar.apps.customer.notifications.context_processors.notifications',
                 'oscar.core.context_processors.metadata',
+
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -180,6 +187,10 @@ OSCAR_ORDER_STATUS_CASCADE = {
 }
 # Setting default oscar currency to VND for convenience
 OSCAR_DEFAULT_CURRENCY = 'VND'
+
+
+# settings for guest checkout
+OSCAR_ALLOW_ANON_CHECKOUT = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

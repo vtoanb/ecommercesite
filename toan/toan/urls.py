@@ -21,6 +21,7 @@ urlpatterns = [
         'django.contrib.sitemaps.views.sitemap',{'sitemaps':base_sitemaps}),
     url(r'', include(application.urls)),
 
+    url('', include('social.apps.django_app.urls', namespace='social')),
 ]
 
 # ... your normal urlpatterns here

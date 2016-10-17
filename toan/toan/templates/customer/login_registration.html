@@ -1,5 +1,13 @@
-{% extends "layout.html" %}
+{% extends "layout_2_col.html" %}
 {% load i18n %}
+
+{% load category_tags %}
+{% load history_tags %}
+{% load currency_filters %}
+{% load product_tags %}
+{% load display_tags %}
+{% load purchase_info_tags %}
+
 
 {% block title %}
     {% trans 'Login or register' %} | {{ block.super }}
@@ -16,13 +24,60 @@
 
 {% block header %}{% endblock %}
 
+
+{% block  column_left %}
+    {% category_tree as tree_categories %}
+    {% if tree_categories %}
+        <div class="REMOVEside_categories hidden-xs">
+
+            <ul class="nav">
+                <li><a href="/basket">Giỏ hàng<span style="margin-left:12px"></span> </a></li>
+                <li><a href="/catalogue">Tất cả sản phẩm</a></li>
+                {% for tree_category, info in tree_categories %}
+                    <li>
+                        <a href="{{ tree_category.get_absolute_url }}">
+                            {% if tree_category.pk == category.pk %}
+                                <strong>{{ tree_category.name}}</strong>
+                            {% else %}
+                                {{ tree_category.name}}
+                            {% endif %}
+                        </a>
+
+                        {% if info.has_children %}<ul>{% else %}</li>{% endif %}
+                        {% for n in info.num_to_close %}
+                            </ul></li>
+                        {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if has_facets %}
+        <h4>{% trans "Refine by" %}</h4>
+        <div class="side_categories">
+            {% for field, data in facet_data.items %}
+                {% if data.results %}
+                    {% include 'search/partials/facet.html' with name=data.name items=data.results %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock column_left %}
+
 {% block content %}
+ 
+ 
 
     <div class="row">
         <div class="col-sm-6 login_form">
             <form id="login_form" action="{{ request.get_full_path }}" method="post" class="well" >
-                <h2>{% trans 'Log In' %}</h2>
-                {% csrf_token %}
+
+ 
+               <h2>{% trans 'Log In' %}</h2>
+ 
+
+   	       <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn-lg btn-primary" style="margin-bottom:18px">Đăng nhập bằng Facebook</a>
+               {% csrf_token %}
                 {% include "partials/form_fields.html" with form=login_form %}
                 <p><a href="{% url 'password-reset' %}">{% trans "I've forgotten my password" %}</a></p>
                 <button name="login_submit" type="submit" value="Log In" class="btn btn-lg btn-primary" data-loading-text="{% trans "Logging in..." %}">{% trans 'Log In' %}</button>

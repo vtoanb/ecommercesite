@@ -60,6 +60,7 @@
                 </div>
             </div>
         </div>
+	 <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn-lg btn-primary" style="margin-bottom:18px">Đăng nhập bằng Facebook</a>
     </form>
 
 {% endblock content %}
