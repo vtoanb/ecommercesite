@@ -1,5 +1,5 @@
 Babel==2.3.4
-Django==1.8.13
+Django==1.11.29
 django-appconf==1.0.2
 django-compressor==2.0
 django-extra-views==0.6.4
