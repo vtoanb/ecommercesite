@@ -1,4 +1,4 @@
-Babel==2.3.4
+Babel==2.9.1
 Django==1.8.13
 django-appconf==1.0.2
 django-compressor==2.0
